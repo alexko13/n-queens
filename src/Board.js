@@ -190,9 +190,9 @@
       var count = 0;
 
       for(var i = 0; i < this.rows().length; i++) {
-        // if(index < 0) {
-        //   break;
-        // }
+        if(index < 0) {
+           break;
+        }
 
         if(rows[i][index] === 1) {
           count++;
