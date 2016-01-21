@@ -41,7 +41,7 @@ window.countNRooksSolutions = function(n) {
   var solutionCount = 0; //fixme
   var board = new Board({"n":n});
 
-  /*var recurse = function(row){
+  var recurse = function(row){
     if (row === n){
       solutionCount++;
       return;
@@ -55,7 +55,7 @@ window.countNRooksSolutions = function(n) {
     }
   };
 
-  recurse(0);*/
+  recurse(0);
   console.log('Number of solutions for ' + n + ' rooks:', solutionCount);
   return solutionCount;
 };
@@ -108,7 +108,7 @@ window.countNQueensSolutions = function(n) {
   var solutionCount = 0; //fixme
   var board = new Board({'n': n});
 
-  /*var recurse = function(row){
+  var recurse = function(row){
     if (row === n){
       solutionCount++;
       return;
@@ -123,7 +123,7 @@ window.countNQueensSolutions = function(n) {
     }
   };
 
-  recurse(0);*/
+  recurse(0);
 
   console.log('Number of solutions for ' + n + ' queens:', solutionCount);
   return solutionCount;
