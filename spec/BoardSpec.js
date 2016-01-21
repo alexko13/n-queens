@@ -14,6 +14,9 @@ describe("Board", function() {
       var message = conflictExpected ? 'should' : 'should not';
 
       it(message + " find a " + conflictType + " conflict", function() {
+        if (conflictDetected !== conflictExpected){
+          console.log(board);
+        }
         expect(conflictDetected).to.be.equal(conflictExpected);
       });
     });

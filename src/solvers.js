@@ -15,7 +15,22 @@
 
 window.findNRooksSolution = function(n) {
   var solution = undefined; //fixme
-
+  var board = new Board({"n":n});
+  var i = 0;
+  while (i < n){
+    var row = Math.floor(Math.random()*n);
+    var col = Math.floor(Math.random()*n);
+    console.log("row: "+row + "  col: " + col);
+    if (board.get(row)[col] !== 1){
+      board.togglePiece(row,col);
+      if (board.hasAnyRooksConflicts()){
+        board.togglePiece(row,col);
+      }else{
+        i++; 
+      }
+    }
+  }
+  solution = board.rows();
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
 };
