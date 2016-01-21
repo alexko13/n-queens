@@ -169,6 +169,12 @@
         }
       }
 
+      for (var i = -this.rows().length; i <= 0; i++){
+        if(this.hasMajorDiagonalConflictAt(i)){
+          return true;
+        }
+      }
+
       return false; // fixme
     },
 
@@ -184,9 +190,9 @@
       var count = 0;
 
       for(var i = 0; i < this.rows().length; i++) {
-        if(index < 0) {
-          break;
-        }
+        // if(index < 0) {
+        //   break;
+        // }
 
         if(rows[i][index] === 1) {
           count++;
@@ -202,6 +208,12 @@
     hasAnyMinorDiagonalConflicts: function() {
       for(var i = 0; i < this.rows().length; i++) {
         if(this.hasMinorDiagonalConflictAt(i)) {
+          return true;
+        }
+      }
+
+      for (var i = this.rows().length; i <= (this.rows().length*2); i++){
+        if(this.hasMinorDiagonalConflictAt(i)){
           return true;
         }
       }
